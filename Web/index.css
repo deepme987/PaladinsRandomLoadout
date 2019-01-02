@@ -1,0 +1,14 @@
+* {
+	margin: 10px;
+	padding: 0;
+}
+
+.flexbox {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.flex {
+	margin: 5px;
+}
