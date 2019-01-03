@@ -27,6 +27,28 @@ def getLoadout():
         run()
         exit()
 
+def getItems():
+    global items
+    items = []
+    try:
+        f = open(".data/items.dat", "r")
+        f.seek(0)
+        lines = f.read().split(', ')
+        f.close()
+
+        f = open(".data/item_deft.dat", "r")
+        f.seek(0)
+        lines_deft = f.read().split(', ')
+        f.close()
+
+        for i in range(4):
+            temp_item = random.choice(lines)
+            while temp_item=="Deft Hands" and champ in lines_deft or temp_item in items:
+                temp_item = random.choice(lines)
+            items.append(temp_item)
+    except:
+        print("Error finding all files, try reinstalling or contact the developer.")
+
 def randomize():
     global lc
     global cards
@@ -62,11 +84,14 @@ def result():
         line = str(i)+str(" - ")+ str(temp[i])
         # f.write("\n"+line)
         print(line)
+    print(items)
     # f.close()
+
 
 def run():
     getChamp()
     getLoadout()
+    getItems()
     randomize()
     result()
 
@@ -74,4 +99,5 @@ print("Welcome to Paladins Random Loadout Generator!")
 n=""
 while n=="":
     run()
+    # getItems()
     n = input("\n\nPress enter to reroll, any key to exit: ")
