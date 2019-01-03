@@ -1,1 +1,0 @@
-This folder contains all required data, keep the folder in same directory as the .exe to run properly!
