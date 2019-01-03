@@ -4,7 +4,8 @@
 }
 
 body {
-	background-image: url("Addons/bg.jpg");
+	/*background-image: url("Addons/bg.jpg");*/
+	background-image: url("Addons/back.jpg");
 	background-color: #dae1e7;
 	background-position: fixed;
 	background-repeat: no-repeat;
@@ -24,8 +25,13 @@ body {
     list-style-type: none;
     overflow: hidden;
     padding: 12px;
+
+/*    background-color: #42AAE6;
+    color: black;
+*/
     background-color: #4d4d4d;
     color: white;
+
     font-family: "Comic Sans MS";
     font-size: 1.1em;
 }
@@ -76,14 +82,13 @@ body {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover,.close:focus {
   color: lime;
   text-decoration: none;
   cursor: pointer;
 }
 
-.flex button {
+.flex button, .bugs {
 	border: none;
 	padding: 0;
 	background: none;
@@ -103,6 +108,20 @@ body {
 	opacity: 1;
 	transform: scale(1.2) rotate(2deg);
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.bugs {
+  color: lime;
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+}
+
+.credits {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    color: white;
 }
 
 #load {
@@ -132,6 +151,7 @@ body {
   border-color: #fff transparent #fff transparent;
   animation: spin 1.2s linear infinite;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
