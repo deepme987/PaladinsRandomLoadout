@@ -124,8 +124,12 @@ var cards = {
     38 : ['Blade Dance', 'Dragon Oil', 'Embers', 'Fan the Flames', 'Footwork', 'Fuel for the Fire', 'Heartless', 'Hideout', 'Infamy', 'Kindling', 'Malice', 'Master Stance', 'Perfect Block', 'Up in Smoke', 'Viciousness', 'Wild Fire'] ,
 }
 
+function hideModal() {
+    $("#myModal").fadeOut(500);
+}
 
 function randomize(x=99) { 
+    $("#myModal").fadeIn(500);
 
     var temp = {};
 
@@ -158,6 +162,12 @@ function randomize(x=99) {
 
     for (var i = 0; i < 5; i++) {
         document.getElementById('result').innerHTML += ("<br>" + cards[x][Object.keys(temp)[i]] + " - " + temp[Object.keys(temp)[i]]);
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("myModal")) {
+        hideModal();
+      }
     }
 
     return false;
