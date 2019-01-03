@@ -124,11 +124,42 @@ var cards = {
     38 : ['Blade Dance', 'Dragon Oil', 'Embers', 'Fan the Flames', 'Footwork', 'Fuel for the Fire', 'Heartless', 'Hideout', 'Infamy', 'Kindling', 'Malice', 'Master Stance', 'Perfect Block', 'Up in Smoke', 'Viciousness', 'Wild Fire'] ,
 }
 
+$(document).ready(function(){
+    $.ajax({
+        url: 'get.php',
+        type: 'get',
+        success: function(data){
+            $('#count').html(data);
+        },
+
+        error: function (request, textStatus, errorThrown) {
+            if (request.statusText =='abort') {
+                return;
+            }
+        }
+    });
+});
+
 function hideModal() {
     $("#myModal").fadeOut(500);
 }
 
 function randomize(x=99) { 
+
+    $.ajax({
+        url: "increment.php",
+        type: "POST",
+        success: function(data){
+            $('#count').html(data);
+        },
+
+        error: function (request, textStatus, errorThrown) {
+            if (request.statusText =='abort') {
+                return;
+            }
+        }
+    });
+
     $("#myModal").fadeIn(500);
 
     var temp = {};
@@ -177,5 +208,5 @@ function report() {
     var copyText = document.getElementById("myInput");
     copyText.select();
     document.execCommand("copy");
-    alert("Reach me through steam or send a mail on deepme987@gmail.com (copied in clipboard).");
+    alert("Reach me through steam or send a mail on deepme987@gmail.com.");
 }

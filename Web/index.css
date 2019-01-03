@@ -36,11 +36,15 @@ body {
     font-size: 1.1em;
 }
 
+.desktop {
+	display: none;
+}
+
 .flexbox {
 	margin: 25px;
 	display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
+  	flex-wrap: wrap;
+  	justify-content: center;
 }
 
 .flex {
@@ -54,17 +58,17 @@ body {
 }
 
 .modal {
-  display: none; 
-  position: fixed;
-  z-index: 1; 
-  padding-top: 125px;
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+	display: none; 
+	position: fixed;
+	z-index: 1; 
+	padding-top: 125px;
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
@@ -76,18 +80,18 @@ body {
 }
 
 .close {
-  color: #000;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  	color: #000;
+  	float: right;
+  	font-size: 28px;
+  	font-weight: bold;
 }
 
 .close:hover,.close:focus {
-  color: lime;
-  text-decoration: none;
-  cursor: pointer;
+ 	color: lime;
+ 	text-decoration: none;
+ 	cursor: pointer;
 }
-
+	
 .flex button, .bugs {
 	border: none;
 	padding: 0;
@@ -99,22 +103,33 @@ body {
 	display: block;
 	transition: all .2s ease-in-out;
 }
-.flexbox:hover img {
-	/*opacity: .8;*/
-	transform: scale(.9) rotate(-1deg);
+
+@media screen and (min-width: 568px){
+	.flexbox:hover img {
+		/*opacity: .8;*/
+		transform: scale(.9) rotate(-1deg);
+	}
+
+	.flex img:hover {
+		opacity: 1;
+		transform: scale(1.2) rotate(2deg);
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	}	
 }
 
-.flex img:hover {
-	opacity: 1;
-	transform: scale(1.2) rotate(2deg);
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+.counter {
+  	margin-left: 20px;
+  	padding-left: 20px;
+  	color: white;
+  	font-family: cursive;
 }
 
 .bugs {
-  color: lime;
-  position: fixed;
-  right: 20px;
-  bottom: 60px;
+  	color: lime;
+  	position: fixed;
+  	right: 20px;
+	bottom: 60px;
 }
 
 .credits {
@@ -159,4 +174,59 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+@media screen and (max-width: 568px){
+	* {
+		font-family: Arial;
+	}
+
+	.desktop {
+		display: block;
+		color: white;
+		text-align: center;
+		margin-top: 25px;
+	}
+	.nav {
+		font-size: 1em;
+		position: sticky;
+		top: 0;
+	}
+
+	.flex {
+		margin: 7px 0px;
+	}
+
+	.flex button, img {
+		width: 93%;
+	}
+
+	.flex img:hover {
+		transform: scale(1.1) rotate(2deg);
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	}	
+
+	.modal-content {
+		width: 80%;
+	}
+
+	.result {
+		font-size: 1.2em;
+		font-family: Arial;
+	}
+
+	.counter {
+		font-family: Arial;
+	}
+	
+	.bugs {
+	    margin-bottom:35px;
+	    font-size: 0.8em;
+	    color: white;
+	}
+
+	.credits {
+		margin-bottom: 30px;
+		font-size: 0.8em;
+	}
 }

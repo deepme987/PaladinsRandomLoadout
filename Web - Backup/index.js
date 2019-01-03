@@ -90,7 +90,7 @@ var cards = {
     4 : ['Bully', 'Concussion', 'Deep Breath', 'Exhilarate', 'Giga Siphon', 'Gotcha', 'Leg Day', 'Momentum', 'No Escape', 'Rapid Sustain', 'Reconstruction', 'Seismic Wave', 'Stomping Ground', 'Street Sweeper', 'Tangled', 'Vigor'] ,
     5 : ['Blast Shower', 'Drain Life', 'Excitement', 'Fatal Sign', 'Incitement', 'Intense Training', 'Kinetics', 'Lunge', 'Megaton', 'Onslaught', 'Quiver', 'Raze', 'Sky Warden', 'Somersault', 'Territorial', 'Tumble'] ,
     6 : ['Abyss Cannon', 'Blow the Man Down', 'Cursed Weaponry', 'Dark Bargain', 'Dreadnought', 'Expansive Vault', 'Gun Deck', "Hangman's Ire", 'Haul on the Bowline', 'Heave Away', 'Hull Piercer', 'Mortal Skewer', 'Plank Walker', 'Reckless Barrage', 'Sea Dogs', 'Spy Glass'] ,
-    7 : ['Altitude', 'Apex Predator', 'Bask', 'Condescension', 'Decimate', 'Follow the Scent', 'Fuel Tank', 'Hot Swap', 'Hyper Boost', 'Lung Capacity', 'Masterful', 'Propel', 'Rain of Fi', 'Spitfire', 'Survival', 'Thrill of the Hunt'] ,
+    7 : ['Altitude', 'Apex Predator', 'Bask', 'Condescension', 'Decimate', 'Follow the Scent', 'Fuel Tank', 'Hot Swap', 'Hyper Boost', 'Lung Capacity', 'Masterful', 'Propel', 'Rain of Fire', 'Spitfire', 'Survival', 'Thrill of the Hunt'] ,
     8 : ['Avalanche', 'Biting Cold', 'Cantrip', 'Chilled', 'Cold Acclimation', 'Cold Blooded', 'Flicker', 'Frigid Field', 'Great Distance', 'Howling Gale', 'Impact', 'Keep Moving', 'Killing Frost', 'Riftwalk', 'Swift Witch', 'Teleport'] ,
     9 : ['Brand', 'Cavalier', 'Dire Need', 'Fearless Leader', 'Heat Transfer', 'Hot Pursuit', 'Immovable Object', 'Incinerate', 'Last Stand', 'Launch', 'Looks That Kill', 'Pyre', 'Running Start', 'Safe Travel', 'Towering Barrier', 'Unstoppable Force'] ,
     10 : ['Burning Oath', 'Conviction', 'Devout Dexterity', 'Fire Siphon', 'Hallowed Sight', 'Ignition', 'Incandescent Being', 'Inner Fire', 'Light Forge', 'Light of Dawn', 'Pyre Walker', 'Pyretic Dynamo', 'Righteous Path', 'Ruthless', 'Solar Flare', 'Stoke the Fire'] ,
@@ -124,8 +124,12 @@ var cards = {
     38 : ['Blade Dance', 'Dragon Oil', 'Embers', 'Fan the Flames', 'Footwork', 'Fuel for the Fire', 'Heartless', 'Hideout', 'Infamy', 'Kindling', 'Malice', 'Master Stance', 'Perfect Block', 'Up in Smoke', 'Viciousness', 'Wild Fire'] ,
 }
 
+function hideModal() {
+    $("#myModal").fadeOut(500);
+}
 
 function randomize(x=99) { 
+    $("#myModal").fadeIn(500);
 
     var temp = {};
 
@@ -160,5 +164,18 @@ function randomize(x=99) {
         document.getElementById('result').innerHTML += ("<br>" + cards[x][Object.keys(temp)[i]] + " - " + temp[Object.keys(temp)[i]]);
     }
 
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("myModal")) {
+        hideModal();
+      }
+    }
+
     return false;
+}
+
+function report() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Reach me through steam or send a mail on deepme987@gmail.com (copied in clipboard).");
 }

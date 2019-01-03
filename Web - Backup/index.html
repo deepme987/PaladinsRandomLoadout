@@ -5,35 +5,42 @@
 	<!-- <meta http-equiv="refresh" content="2"> -->
 	<link rel="shortcut icon" href="Addons/thumb.ico" />
 	<link rel="stylesheet" href="index.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="onload.js"></script>
 	<title>	Paladins Random Loadout Generator</title>
 </head>
 	
 <body>
-
-	<div class="bg">
-		<img src="Addons/bg.jpg" alt="">
-	</div>
 	
-	<div class="content">
+	<div id="load"></div>
+
+	<div id="contents">
 		<div class="nav">
 			<nav>
 				<p style="float: left;">Paladins Random Loadout Generator</p>
-				<p style="float: right;">PronoOb~</p>	
+				<p style="float: right;"><a href="https://steamcommunity.com/id/PronoOb_me/" style="text-decoration: none; /*color: black;*/ color: white;" target="_blank">PronoOb~</a></p>	
 				<!-- <p id="visit_count" style="float: right; margin-right: 10px;">0</p> -->
 			</nav>
 		</div>
-		
-		<div class="mainflex">
-			<div class="flexbox" id="content">
-			
-			</div>
 
-			<div class="result" id="result">
-				Select A Champion!
-			</div>	
+		<div id="myModal" class="modal">
+			<div class="modal-content" id="modal-content">
+		    	<span class="close" onclick="return hideModal()">&times;</span>
+		    	<p class="result" id="result">Some text in the Modal..</p>
+		  	</div>
+		</div>
+		
+		<div class="flexbox" id="content">
+				
+		</div>
+		
+
+		<div class="bug">
+            <p class="credits">Background Credits: <a href="https://www.deviantart.com/vocox" target="_blank" style="text-decoration:none; color:aqua;">Vocox</a></p>
+			<input type="text" value="deepme987@gmail.com" id="myInput" style="display: none;">
+			<button class="bugs" onclick="return report()">Report Bugs</button>
 		</div>
 	</div>
-		
 	
 	<!-- <script src="counter.js"></script> -->
 	<script src="loop.js"></script>
