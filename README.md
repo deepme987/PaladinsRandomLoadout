@@ -12,4 +12,11 @@ How to use?
   Just run the "Generate Random Loadout.exe" and create random loadouts with random champions!(optional)
 
 
-While I don't mind if the source code is modified/reused for personal use, I expect it won't be used piublically without my attention :D
+Sample Images:
+
+![Sample1](Web/Images/Sample1.png "Sample1")
+
+![Sample2](Web/Images/Sample2.png "Sample2")
+
+*You are free to integrate the code in your application. 
+However, if you're resharing your application, I would appreciate if you link the repository and provide credits :)*
