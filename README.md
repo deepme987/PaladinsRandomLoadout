@@ -1,7 +1,7 @@
 # PaladinsRandomLoadout
 Are you Insane enough to take the Random Loadout Generator Challenge?
 
-https://paladinsrandomloadout.000webhostapp.com/
+Visit the [website](https://paladins-random-loadout.000webhostapp.com/)
 
 What is this?
 
